@@ -152,13 +152,76 @@ let user = {
 alert(user);
 alert(+user); // valueOf -> 1000
 alert(user + 500);
-*/
 
-let obj = {
-  tostring() {
-    return '6';
+let user1 = { name: 'He' };
+let user2 = { name: 'She' };
+
+alert(user1 + user2);
+
+function Bird() {
+  this.name = 'Sweety';
+}
+
+let obj = new Bird();
+console.log(Object); // Native Object in js
+console.log(obj);
+
+let date1 = Date.now();
+let date2 = Date.now();
+console.log(date1 - date2);
+
+
+
+/// How to make a pyramide character
+let character = '#';
+let count = 8;
+let rows = [];
+
+for (let i = 1; i < count; i++) {
+  rows.push(padRow(i, count));
+}
+
+// To track the character entering the arrays
+let result = '';
+
+for (const row of rows) {
+  result += row + '\n';
+}
+
+console.log(result);
+
+function padRow(rowNumber, rowCounts) {
+  return (
+    ' '.repeat(rowCounts - rowNumber) +
+    character.repeat(2 * rowNumber - 1) +
+    ' '.repeat(rowCounts - rowNumber)
+  );
+}
+
+// Program
+let total = 0,
+  count2 = 1;
+while (count2 <= 10) {
+  total += count2;
+  count2 += 1;
+}
+console.log(total);
+
+console.log('This is the first line\nAnd this is the second');
+
+*/
+let user = {
+  name: 'John',
+  sayHi() {
+    console.log('Hey 🖐 buddy!');
   },
 };
 
-alert(obj * 2);
-alert(obj + 2);
+user.sayHi();
+
+let str = 'hello';
+
+console.log(str.toUpperCase());
+
+alert(typeof 0);
+alert(typeof new Number(1));
